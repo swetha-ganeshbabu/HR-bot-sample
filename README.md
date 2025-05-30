@@ -82,32 +82,6 @@ This JSON array contains entries, each with:
 
 Edit `faq.json` to add, modify, or remove questions and answers. Changes should reload automatically in debug mode.
 
-## Deployment (Heroku)
-
-The simplest way to deploy this application is using Heroku.
-
-1.  **Ensure your project is in a Git repository** and you have committed your latest changes.
-
-2.  **Log in to Heroku CLI:**
-
-    ```bash
-    heroku login
-    ```
-
-3.  **Create a new Heroku app:**
-
-    ```bash
-    heroku create your-app-name  # Or omit name for a random one
-    ```
-
-4.  **Push your code to Heroku:**
-
-    ```bash
-    git push heroku main  # Or 'master' if that's your branch
-    ```
-
-Heroku will use the `Procfile` (`web: gunicorn app:app`) and `requirements.txt` to build and run your app.
-
 ## Screenshot
 
 Here's a look at the HR Assistant bot interface:
