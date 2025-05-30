@@ -21,11 +21,27 @@ faq_data = load_faq_data()
 
 def find_faq_entry(query):
     query = query.lower()
+
+    # Separate greeting entries from other entries
+    greeting_entry = None
+    other_entries = []
     for entry in faq_data:
-        # Check keywords for initial match
+        if entry.get('question') == 'Greeting': # Assuming 'Greeting' question identifies the greeting entry
+            greeting_entry = entry
+        else:
+            other_entries.append(entry)
+
+    # First, try to match keywords in non-greeting entries
+    for entry in other_entries:
         if any(keyword.lower() in query for keyword in entry.get('keywords', [])):
-            return entry
-    return None # Return None if no entry is found
+            return entry # Return the topic entry if matched
+
+    # If no topic keyword matched, check for greeting keywords
+    if greeting_entry:
+        if any(keyword.lower() in query for keyword in greeting_entry.get('keywords', [])):
+            return greeting_entry # Return the greeting entry if matched
+
+    return None
 
 @app.route('/')
 def home():
@@ -77,7 +93,11 @@ def ask():
         # User is asking a new question (not a follow-up)
         matched_entry = find_faq_entry(question)
         if matched_entry:
-            if 'follow_up' in matched_entry:
+            # If the matched entry is a greeting, return its answer directly
+            if matched_entry.get('question') == 'Greeting':
+                answer = matched_entry['answer']
+                session['current_topic'] = None # Greetings don't start a follow-up
+            elif 'follow_up' in matched_entry:
                 # Found an entry with follow-up questions
                 answer = matched_entry['answer'] # The initial follow-up question text
                 follow_up = matched_entry['follow_up']['question'] # The actual question for the next turn
