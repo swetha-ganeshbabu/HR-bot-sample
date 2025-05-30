@@ -1,0 +1,71 @@
+[
+    {
+        "keywords": ["hi", "hello", "hey"],
+        "question": "Greeting",
+        "answer": "Hello! How can I assist you with your HR questions today? You can ask me about: Leave, Benefits, Payroll, Remote work, Expenses, Insurance, Training, PTO, Sick leave, or Maternity leave."
+    },
+    {
+        "keywords": ["great", "thanks", "thank you", "good job", "helpful"],
+        "question": "Appreciation",
+        "answer": "You're welcome! I'm glad I could help."
+    },
+    {
+        "keywords": ["leave", "time off", "vacation"],
+        "question": "How do I request time off?",
+        "answer": "Submit your leave request through the HR portal at least 2 weeks in advance."
+    },
+    {
+        "keywords": ["benefits", "insurance", "401k"],
+        "question": "What benefits do I get?",
+        "answer": "Regarding benefits, are you interested in Health Insurance, 401(k), or Paid Time Off (PTO)?",
+        "follow_up": {
+            "question": "Are you interested in Health Insurance, 401(k), or Paid Time Off (PTO)? Please type one of these options.",
+            "options": ["Health Insurance", "401(k)", "PTO"],
+            "next_step": {
+                "health insurance": "Full-time employees are eligible for our comprehensive health insurance plan. Details are available on the HR portal.",
+                "401(k)": "Our company offers a 401(k) plan with employer matching. You can enroll or manage your contributions through the retirement portal.",
+                "pto": "Full-time employees accrue 20 days of PTO annually. You can check your balance in the HR portal."
+            }
+        }
+    },
+    {
+        "keywords": ["payroll", "payday", "salary"],
+        "question": "When is payday?",
+        "answer": "Payday is every other Friday. Direct deposits are processed on Thursday evening."
+    },
+    {
+        "keywords": ["remote", "work from home", "WFH"],
+        "question": "What is the remote work policy?",
+        "answer": "Employees can work remotely up to 3 days per week. Please coordinate with your manager."
+    },
+    {
+        "keywords": ["expenses", "reimbursement", "submit expenses"],
+        "question": "How do I submit expenses?",
+        "answer": "Submit expenses through the expense portal within 30 days of purchase. Include all receipts."
+    },
+     {
+        "keywords": ["insurance", "update insurance"],
+        "question": "How do I update my insurance?",
+        "answer": "You can update your insurance during the annual open enrollment period or after a qualifying life event. Contact HR for assistance."
+    },
+    {
+        "keywords": ["training", "resources", "LMS"],
+        "question": "Where can I find training resources?",
+        "answer": "Training resources are available in the Learning Management System (LMS). Access it through the employee portal."
+    },
+    {
+        "keywords": ["pto", "paid time off", "vacation balance"],
+        "question": "How much PTO do I have?",
+        "answer": "Full-time employees accrue 20 days of PTO annually. You can check your balance in the HR portal."
+    },
+     {
+        "keywords": ["sick leave", "sick days"],
+        "question": "What is the policy for sick leave?",
+        "answer": "Employees are eligible for paid sick leave. Please refer to the employee handbook for details on accrual and usage."
+    },
+    {
+        "keywords": ["maternity leave", "paternity leave", "parental leave"],
+        "question": "What is the maternity/paternity leave policy?",
+        "answer": "Our company offers paid maternity and paternity leave. Please contact HR for specific eligibility and duration details."
+    }
+] 
